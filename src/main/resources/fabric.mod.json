@@ -8,8 +8,17 @@
 		"Fuseleaf Studio"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/FuseLeaf/rideable-minecarts-plus",
+		"issues": "https://github.com/FuseLeaf/rideable-minecarts-plus/issues",
+		"sources": "https://github.com/FuseLeaf/rideable-minecarts-plus"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.modrinth": "https://modrinth.com/mod/rideable-minecarts-plus",
+				"modmenu.curseforge": "https://www.curseforge.com/minecraft/mc-mods/rideable-minecarts-plus"
+			}
+		}
 	},
 	"license": "GPL-3.0",
 	"icon": "assets/rideable-minecarts-plus/icon.png",

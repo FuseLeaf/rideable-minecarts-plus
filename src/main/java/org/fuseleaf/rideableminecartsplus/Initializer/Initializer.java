@@ -2,7 +2,10 @@ package org.fuseleaf.rideableminecartsplus.Initializer;
 
 import org.fuseleaf.rideableminecartsplus.ride.Ride;
 
-import net.fabricmc.fabric.api.event.player.UseEntityCallback;
+import net.minecraft.world.InteractionResult;
+
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
 public class Initializer {
 
@@ -12,9 +15,18 @@ public class Initializer {
 
     private static class Events {
 
-        private static void init() {
-            UseEntityCallback.EVENT.register((player, level, hand, entity, hitResult) -> {
-                return Ride.ride(entity, hitResult, player);
+        public static void init() {
+            NeoForge.EVENT_BUS.addListener((PlayerInteractEvent.EntityInteract event) -> {
+                InteractionResult result = Ride.ride(
+                    event.getTarget(),
+                    event.getLocation(),
+                    event.getEntity()
+                );
+
+                if (result != InteractionResult.PASS) {
+                    event.setCancellationResult(result);
+                    event.setCanceled(true);
+                }
             });
         }
     }

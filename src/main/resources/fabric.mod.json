@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "rideable-minecarts-plus",
+	"version": "${version}",
+	"name": "Rideable Minecarts Plus",
+	"description": "Make more minecarts rideable and improve the minecart experience with more natural and useful interactions.",
+	"authors": [
+		"Fuseleaf Studio"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/rideable-minecarts-plus/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"org.fuseleaf.rideableminecartsplus.RideableMinecartsPlus"
+		]
+	},
+	"mixins": [
+		"rideable-minecarts-plus.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": ">=26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

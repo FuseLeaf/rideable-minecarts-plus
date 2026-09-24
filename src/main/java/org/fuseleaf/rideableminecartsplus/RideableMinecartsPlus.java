@@ -2,12 +2,14 @@ package org.fuseleaf.rideableminecartsplus;
 
 import org.fuseleaf.rideableminecartsplus.Initializer.Initializer;
 
-import net.fabricmc.api.ModInitializer;
+import net.neoforged.fml.common.Mod;
 
-public class RideableMinecartsPlus implements ModInitializer {
+@Mod(RideableMinecartsPlus.MOD_ID)
+public class RideableMinecartsPlus {
 
-    @Override
-    public void onInitialize() {
+    public static final String MOD_ID = "rideable_minecarts_plus";
+
+    public RideableMinecartsPlus() {
         Initializer.init();
     }
 }

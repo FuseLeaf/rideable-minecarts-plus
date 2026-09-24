@@ -9,16 +9,15 @@ import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.entity.vehicle.minecart.Minecart;
 import net.minecraft.world.entity.vehicle.minecart.MinecartHopper;
 import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 
 public class Ride {
 
-    public static @NonNull InteractionResult ride(Entity entity, EntityHitResult hitResult, Player player) {
+    public static @NonNull InteractionResult ride(Entity entity, Vec3 hitLocation, Player player) {
         if (entity instanceof AbstractMinecart && !(entity instanceof Minecart)) {
             AABB aabb = entity.getBoundingBox();
             double rideY = aabb.minY + (aabb.maxY - aabb.minY) * 0.9;
-            double hitY = hitResult.getLocation().y;
+            double hitY = entity.getY() + hitLocation.y;
 
             if (hitY < rideY) {
                 player.startRiding(entity, true, true);

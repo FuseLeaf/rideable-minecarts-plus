@@ -26,7 +26,7 @@ public class AbstractMinecartMixin {
         AbstractMinecart cart = (AbstractMinecart)(Object)this;
         Vec3 vec3 = cir.getReturnValue();
 
-        if (!((AbstractMinecart)(Object)this instanceof Minecart)) {
+        if (!(cart instanceof Minecart)) {
             cir.setReturnValue(Ride.adjustPassengerPosition(cart, vec3));
         }
     }

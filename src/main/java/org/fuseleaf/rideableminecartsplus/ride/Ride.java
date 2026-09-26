@@ -23,7 +23,7 @@ public class Ride {
                 && !player.isCrouching()
                 && !entity.isVehicle()
             ) {
-                player.startRiding(entity, true, true);
+                player.startRiding(entity);
 
                 return InteractionResult.SUCCESS;
             }

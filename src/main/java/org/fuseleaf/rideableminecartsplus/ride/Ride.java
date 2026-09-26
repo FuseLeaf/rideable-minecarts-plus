@@ -15,7 +15,7 @@ import net.minecraft.world.phys.Vec3;
 public class Ride {
 
     public static @NonNull InteractionResult ride(Entity entity, EntityHitResult hitResult, Player player) {
-        if (entity instanceof AbstractMinecart && !(entity instanceof Minecart)) {
+        if (entity instanceof AbstractMinecart && !(entity instanceof Minecart) && hitResult != null) {
             AABB aabb = entity.getBoundingBox();
             double rideY = aabb.minY + (aabb.maxY - aabb.minY) * 0.9;
             double hitY = hitResult.getLocation().y;

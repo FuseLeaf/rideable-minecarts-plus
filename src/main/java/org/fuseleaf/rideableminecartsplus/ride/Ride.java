@@ -1,20 +1,18 @@
 package org.fuseleaf.rideableminecartsplus.ride;
 
-import org.jspecify.annotations.NonNull;
-
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
-import net.minecraft.world.entity.vehicle.minecart.Minecart;
-import net.minecraft.world.entity.vehicle.minecart.MinecartHopper;
+import net.minecraft.world.entity.vehicle.AbstractMinecart;
+import net.minecraft.world.entity.vehicle.Minecart;
+import net.minecraft.world.entity.vehicle.MinecartHopper;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
 
 public class Ride {
 
-    public static @NonNull InteractionResult ride(Entity entity, EntityHitResult hitResult, Player player) {
+    public static InteractionResult ride(Entity entity, EntityHitResult hitResult, Player player) {
         if (entity instanceof AbstractMinecart && !(entity instanceof Minecart) && hitResult != null) {
             AABB aabb = entity.getBoundingBox();
             double rideY = aabb.minY + (aabb.maxY - aabb.minY) * 0.9;

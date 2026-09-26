@@ -20,7 +20,11 @@ public class Ride {
             double rideY = aabb.minY + (aabb.maxY - aabb.minY) * 0.9;
             double hitY = hitResult.getLocation().y;
 
-            if (hitY < rideY && !entity.isVehicle()) {
+            if (
+                hitY < rideY
+                && !player.isCrouching()
+                && !entity.isVehicle()
+            ) {
                 player.startRiding(entity, true, true);
 
                 return InteractionResult.SUCCESS;
